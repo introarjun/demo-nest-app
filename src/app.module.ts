@@ -10,6 +10,10 @@ import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
+import { EmployeeModule } from './employee/employee.module';
+import { AccountModule } from './account/account.module';
+import { BookModule } from './book/book.module';
+import { LibraryModule } from './library/library.module';
 
 @Module({
   imports: [
@@ -18,7 +22,7 @@ import { UsersModule } from './users/users.module';
       load: [configuration],
     }),
     MongooseModule.forRoot(process.env.MONGO_URL!),
-    ProductsModule, StudentModule, CustomerModule, UsersModule
+    ProductsModule, StudentModule, CustomerModule, UsersModule, EmployeeModule, AccountModule, BookModule, LibraryModule
   ],
   controllers: [AppController, DatabaseController],
   providers: [AppService, DatabaseService],
