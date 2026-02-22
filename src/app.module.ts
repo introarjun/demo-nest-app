@@ -14,6 +14,7 @@ import { EmployeeModule } from './employee/employee.module';
 import { AccountModule } from './account/account.module';
 import { BookModule } from './book/book.module';
 import { LibraryModule } from './library/library.module';
+import { ManyToManyModule } from './many-to-many/many-to-many.module';
 
 @Module({
   imports: [
@@ -22,7 +23,7 @@ import { LibraryModule } from './library/library.module';
       load: [configuration],
     }),
     MongooseModule.forRoot(process.env.MONGO_URL!),
-    ProductsModule, StudentModule, CustomerModule, UsersModule, EmployeeModule, AccountModule, BookModule, LibraryModule
+    ProductsModule, StudentModule, CustomerModule, UsersModule, EmployeeModule, AccountModule, BookModule, LibraryModule, ManyToManyModule
   ],
   controllers: [AppController, DatabaseController],
   providers: [AppService, DatabaseService],
